@@ -5,7 +5,6 @@ tarciso.junior@gmail.com */
 var express = require('express'),
 	app = express(),
 	server = require('http').createServer(app),
-	io = require('socket.io').listen(server),
 	porta= 1620,
 	soap = require('soap');
 
