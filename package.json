@@ -1,0 +1,18 @@
+{
+  "name": "soaptester",
+  "version": "0.1.1",
+  "author": {
+    "name": "Tarciso Martins Jr",
+    "url": "www.tarcisojunior.com.br",
+    "email": "tarciso.junior@gmail.com"
+  },
+  "description": "Rotina para testar webservices SOAP - SOAP Webservices test code",
+  "repository":{
+    "type":"git",
+    "url":"https://github.com/TarcisoJunior/nodejs-soap-test"
+  },
+  "dependencies": {
+    "express": "^4.13.4",
+    "soap": "^0.15.0"
+  }
+}

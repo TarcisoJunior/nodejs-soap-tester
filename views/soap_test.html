@@ -1,0 +1,57 @@
+<!-- SOAP Webservice Tester 
+Tarciso Martins Junior
+tarciso.junior@gmail.com -->
+
+<h3> SOAP Webservice tester</h3>
+
+<form method='post'>
+	<label id="lblUrl">WebService url<br>
+	<input type="text" id="edtUrl" name="edtUrl" size="80"/></label>
+	<br>
+	<label id="lblMetodo">Function name <br>
+	<input type="text" id="edtMetodo" name="edtMetodo" size="80"/></label>
+	<br>
+	<label id="lblParametros">Input Params <br/>
+	<textarea id="edtParams" name="edtParams" rows="5" cols="80">
+	</textarea>
+	<br>
+	<button type="button" onclick="consultar_webservice()" name="btnConsultar">Testar</button>
+	<hr>
+	<textarea id="edtResult" name="edtResult" rows="5" cols="80">
+	
+	</textarea>
+	<br>
+</form>
+
+<script>
+	function consultar_webservice(){
+		// validar formulario
+		if ( validar_form()){
+	        
+	        var urlWebService = encodeURIComponent(edtUrl.value);
+	        var url="consulta/"+urlWebService+"/"+edtMetodo.value+"/"+encodeURI(edtParams.value);
+
+			//declara objeto para realizar a consulta ajax
+			var xhttp = new XMLHttpRequest();
+			xhttp.open("GET", url, true);
+	       
+	        // configura evento de callback
+	        xhttp.onreadystatechange = function() {
+				if (xhttp.readyState == 4 && xhttp.status == 200) {
+			    	document.getElementById('edtResult').value = xhttp.responseText;
+			  	}
+			};
+			//executa a consulta ajax
+			xhttp.send();
+        }
+
+	}
+
+	function validar_form(){
+		//alert('validar');
+		
+		// inserir validações
+
+		return true;
+	}
+</script>
